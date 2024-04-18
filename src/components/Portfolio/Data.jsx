@@ -31,13 +31,13 @@ export const projectsNav = [
     name: "all",
   },
   {
-    name: "Data Science",
+    name: "Business Analysis",
   },
   {
-    name: "Supply Chain Tech",
+    name: "Data Analytics",
   },
   {
-    name: "Financial Tech",
+    name: "AI & Data Science",
   },
   {
     name: "Others",
