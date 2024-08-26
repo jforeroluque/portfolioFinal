@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
-
-// import data
-import { projectsData } from "./Data";
-import { projectsNav } from "./Data";
-
-// import components
+import { projectsData, projectsNav } from "./Data";
 import WorkItems from "./WorkItems";
 
-const Projects = () => {
+const Works = () => {
   const [item, setItem] = useState({ name: "all" });
   const [projects, setProjects] = useState([]);
   const [active, setActive] = useState(0);
@@ -57,4 +52,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Works;

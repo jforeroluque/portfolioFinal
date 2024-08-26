@@ -1,0 +1,108 @@
+.project-detail {
+    padding: 2rem;
+    background-color: var(--container-color);
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-detail__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    margin-bottom: var(--mb-1);
+    text-align: center;
+  }
+  
+  .project-detail__image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 1rem;
+    margin: 1.5rem auto;
+    display: block;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-detail__info {
+    margin-top: 1rem;
+    text-align: left;
+  }
+  
+  .project-detail__description {
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-2);
+    color: var(--text-color);
+  }
+  
+  .project-detail__info p {
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+    color: var(--text-color);
+  }
+  
+  .project-not-found {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: red;
+  }
+  
+  /* For links */
+  a {
+    color: var(--title-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: var(--hover-color); /* Adjust this to your desired hover color */
+  }
+  
+  /*==================== MEDIA QUERIES ====================*/
+  /* For large devices */
+  @media screen and (max-width: 992px) {
+    .project-detail {
+      padding: 1.5rem;
+    }
+  
+    .project-detail__image {
+      max-width: 100%;
+    }
+  
+    .project-detail__title {
+      font-size: var(--normal-font-size);
+    }
+  }
+  
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+    .project-detail {
+      padding: 1.25rem;
+    }
+  
+    .project-detail__image {
+      margin: 1rem auto;
+    }
+  }
+  
+  /* For small devices */
+  @media screen and (max-width: 576px) {
+    .project-detail {
+      padding: 1rem;
+    }
+  
+    .project-detail__image {
+      width: 100%;
+      margin: 0.75rem auto;
+    }
+  }
+  
+  @media screen and (max-width: 350px) {
+    .project-detail__title {
+      font-size: var(--small-font-size);
+    }
+  
+    .project-detail__description {
+      font-size: var(--small-font-size);
+    }
+  }

@@ -1,4 +1,5 @@
-//import React from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import "./App.css";
 import Header from './components/header/Header';
 import Home from './components/home/Home';
@@ -10,26 +11,35 @@ import Work from './components/Portfolio/Work';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import ScrollUp from './components/scrollup/ScrollUp';
+import ProjectDetail from './components/Portfolio/ProjectDetail';
 
 const App = () => {
   return (
     <>
-    <Header />
+      <Header />
 
-    <main className='main'>
-      <Home />
-      <About />
-      <Skills />
-      <Services />
-      <Qualification />
-      <Work />
-      <Contact />
-    </main>
+      <main className='main'>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Home />
+              <About />
+              <Skills />
+              <Services />
+              <Qualification />
+              <Work />
+              <Contact />
+            </>
+          } />
+          {/* Only the project detail page is handled separately */}
+          <Route path="/project/:id" element={<ProjectDetail />} />
+        </Routes>
+      </main>
 
-    <Footer />
-    <ScrollUp />
+      <Footer />
+      <ScrollUp />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
