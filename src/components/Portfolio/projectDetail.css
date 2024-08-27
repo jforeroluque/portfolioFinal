@@ -1,108 +1,263 @@
-.project-detail {
-    padding: 2rem;
-    background-color: var(--container-color);
-    border-radius: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.project-detail__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 4rem;
+}
+
+.project-detail__img {
+  width: 500px;
+  border-radius: 1.5rem;
+  justify-self: center;
+}
+
+.project-detail__info {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-bottom: var(--mb-2);
+}
+
+.project-detail__box {
+  background-color: var(--container-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  text-align: left;
+  padding: 1rem 1.25rem;
+}
+
+.project-detail__icon {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  margin-bottom: var(--mb-0-5);
+}
+
+.project-detail__title {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  margin-right: 0.5rem;
+}
+
+.project-detail__subtitle {
+  font-size: var(--tiny-font-size);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to two lines */
+  -webkit-box-orient: vertical;
+  margin: 0;
+}
+
+.project-detail__description {
+  padding: 0 4rem 0 0;
+  margin-bottom: var(--mb-2-5);
+}
+
+.project-detail__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Adjust the margin as needed */
+}
+
+.project-detail__link {
+  font-size: var(--tiny-font-size);
+  color: var(--text-color-light);
+  text-decoration: underline; /* Optional, to indicate it's a link */
+}
+
+.project-detail__link:hover {
+  color: var(--title-color); /* Change color on hover */
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .project-detail__container {
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
   }
-  
-  .project-detail__title {
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
-    color: var(--title-color);
-    margin-bottom: var(--mb-1);
-    text-align: center;
+
+  .project-detail__img {
+      width: 220px;
   }
-  
-  .project-detail__image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 1rem;
-    margin: 1.5rem auto;
-    display: block;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  .project-detail__box {
+      padding: 0.75rem 0.5rem;
   }
-  
+
+  .project-detail__data {
+      text-align: center;
+  }
+
   .project-detail__info {
-    margin-top: 1rem;
-    text-align: left;
+      justify-content: center;
   }
-  
+
   .project-detail__description {
-    font-size: var(--normal-font-size);
-    margin-bottom: var(--mb-2);
-    color: var(--text-color);
+      padding: 0 5rem;
+      margin-bottom: 2rem;
   }
-  
-  .project-detail__info p {
-    font-size: var(--small-font-size);
-    margin-bottom: var(--mb-1);
-    color: var(--text-color);
+}
+
+/* For medium devices */
+@media screen and (max-width: 576px) {
+  .project-detail__info {
+      grid-template-columns: repeat(3, 1fr);
   }
-  
-  .project-not-found {
-    padding: 2rem;
-    text-align: center;
-    font-size: 1.5rem;
-    color: red;
+
+  .project-detail__description {
+      padding: 0;
   }
-  
-  /* For links */
-  a {
-    color: var(--title-color);
-    text-decoration: underline;
-    transition: color 0.3s ease;
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .project-detail__info {
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  a:hover {
-    text-decoration: none;
-    color: var(--hover-color); /* Adjust this to your desired hover color */
+}
+
+/* Existing CSS for the Project Detail section */
+
+.project-detail__approach {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-detail__approach-box {
+  background-color: var(--container-color);
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.project-detail__subtitle-title {
+  font-size: var(--h3-font-size); /* Smaller title */
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1-5);
+}
+
+.project-detail__list {
+  list-style-type: disc;
+  margin-left: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .project-detail__approach {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
   }
-  
-  /*==================== MEDIA QUERIES ====================*/
-  /* For large devices */
-  @media screen and (max-width: 992px) {
-    .project-detail {
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .project-detail__approach-box {
       padding: 1.5rem;
-    }
-  
-    .project-detail__image {
-      max-width: 100%;
-    }
-  
-    .project-detail__title {
+  }
+
+  .project-detail__subtitle-title {
       font-size: var(--normal-font-size);
-    }
   }
-  
-  /* For medium devices */
-  @media screen and (max-width: 768px) {
-    .project-detail {
-      padding: 1.25rem;
-    }
-  
-    .project-detail__image {
-      margin: 1rem auto;
-    }
+}
+
+/* For small devices */
+@media screen and (max-width: 576px) {
+  .project-detail__approach {
+      gap: 1.5rem;
   }
-  
-  /* For small devices */
-  @media screen and (max-width: 576px) {
-    .project-detail {
+
+  .project-detail__approach-box {
       padding: 1rem;
-    }
-  
-    .project-detail__image {
-      width: 100%;
-      margin: 0.75rem auto;
-    }
+  }
+}
+
+/* Impact and Strategic Recommendations Section */
+/* Adjusting the Business Impact and Recommendations Section */
+.project-detail__impact {
+  margin-top: 2rem; /* Reduce top margin to bring the section closer to the previous content */
+}
+
+.project-detail__impact-title {
+  font-size: var(--h2-font-size); 
+  font-weight: var(--font-medium);
+  margin-bottom: 0.1rem; /* Reduce the bottom margin to make it more compact */
+  text-align: center; /* Center align the title */
+}
+
+.project-detail__impact-boxes {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* Reduce the gap between boxes */
+  margin-bottom: 1.5rem; /* Reduce bottom margin to make it more compact */
+}
+
+.project-detail__impact-box {
+  background-color: var(--container-color);
+  padding: 1.25rem; /* Reduce padding inside boxes */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.project-detail__impact-icon {
+  font-size: 1.75rem; /* Adjust font size to make the icon slightly smaller */
+  color: var(--title-color);
+  margin-bottom: 0.5rem; /* Reduce margin to bring icon closer to the title */
+}
+
+.project-detail__impact-box-title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: 0.1rem; /* Reduce margin to make title more compact */
+}
+
+.project-detail__impact-box-subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.project-detail__recommendations {
+  margin-top: 0.1rem; /* Reduce top margin to bring it closer to the impact boxes */
+  line-height: 1.6; /* Adjust line height for better readability */
+  text-align: left; /* Center align the recommendations */
+}
+
+/* Responsive Adjustments */
+
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .project-detail__impact-boxes {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .project-detail__impact-boxes {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 576px) {
+  .project-detail__impact-title {
+      font-size: var(--h3-font-size); /* Adjust font-size for smaller screens */
   }
   
-  @media screen and (max-width: 350px) {
-    .project-detail__title {
-      font-size: var(--small-font-size);
-    }
-  
-    .project-detail__description {
-      font-size: var(--small-font-size);
-    }
+  .project-detail__impact-boxes {
+      gap: 1rem; /* Further reduce the gap for small devices */
   }
+
+  .project-detail__impact-box {
+      padding: 1rem; /* Reduce padding for small devices */
+  }
+
+  .project-detail__recommendations {
+      margin-top: 1rem; /* Reduce top margin for small devices */
+  }
+}
