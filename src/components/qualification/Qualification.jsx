@@ -11,7 +11,7 @@ const Qualification = () => {
   return (
     <section className="qualification section">
       <h2 className="section__title">Qualification</h2>
-      <span className="section__subtitle">My personel journey</span>
+      <span className="section__subtitle">My personal journey</span>
 
       <div className="qualification__container container">
         <div className="qualification__tabs">
@@ -76,7 +76,7 @@ const Qualification = () => {
               <div>
                 <h3 className="qualification__title">Designing and Building AI Products and Services</h3>
                 <span className="qualification__subtitle">
-                  Colombia - MIT professional Education
+                  USA - MIT professional Education
                 </span>
                 <div className="qualification__calender">
                   <i className="uil uil-calendar-alt"></i> 2024

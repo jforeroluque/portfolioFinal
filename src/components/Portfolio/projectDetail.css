@@ -31,17 +31,16 @@
 }
 
 .project-detail__title {
-  font-size: var(--small-font-size);
+  font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
   margin-right: 0.5rem;
 }
 
 .project-detail__subtitle {
-  font-size: var(--tiny-font-size);
+  font-size: var(--small-font-size);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to two lines */
   -webkit-box-orient: vertical;
   margin: 0;
 }
@@ -58,10 +57,9 @@
 }
 
 .project-detail__link {
-  font-size: var(--tiny-font-size);
+  font-size: var(--small-font-size);
   color: var(--text-color-light);
-  text-decoration: underline; /* Optional, to indicate it's a link */
-}
+  text-decoration: underline; /* Optional, to indicate it's a link */}
 
 .project-detail__link:hover {
   color: var(--title-color); /* Change color on hover */

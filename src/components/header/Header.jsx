@@ -1,23 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
-  /*=============== Change Background Header ===============*/
   window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
-    // when the scroll is higher than 200 viewport height, add the scroll-header class to a tag with the header tag
     if (this.scrollY >= 80) header.classList.add("scroll-header");
     else header.classList.remove("scroll-header");
   });
 
-  /*=============== Toggle Menu ===============*/
   const [Toggle, showMenu] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to the section only if there is a hash in the URL
+    if (location.hash) {
+      const section = document.querySelector(location.hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  const handleNavigation = (sectionId) => {
+    setActiveNav(sectionId);
+    if (location.pathname === "/") {
+      const section = document.querySelector(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(`/${sectionId}`);
+    }
+    showMenu(false);
+  };
 
   return (
     <header className="header">
       <nav className="nav container">
-        <a href="index.html" className="nav__logo">
+        <a href="/" className="nav__logo">
           JFL
         </a>
 
@@ -26,7 +49,10 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#home"
-                onClick={() => setActiveNav("#home")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation("#home");
+                }}
                 className={
                   activeNav === "#home" ? "nav__link active-link" : "nav__link"
                 }
@@ -38,7 +64,10 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#about"
-                onClick={() => setActiveNav("#about")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation("#about");
+                }}
                 className={
                   activeNav === "#about" ? "nav__link active-link" : "nav__link"
                 }
@@ -50,7 +79,10 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#skills"
-                onClick={() => setActiveNav("#skills")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation("#skills");
+                }}
                 className={
                   activeNav === "#skills"
                     ? "nav__link active-link"
@@ -64,7 +96,10 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#services"
-                onClick={() => setActiveNav("#services")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation("#services");
+                }}
                 className={
                   activeNav === "#services"
                     ? "nav__link active-link"
@@ -78,7 +113,10 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#portfolio"
-                onClick={() => setActiveNav("#portfolio")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation("#portfolio");
+                }}
                 className={
                   activeNav === "#portfolio"
                     ? "nav__link active-link"
@@ -92,7 +130,10 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#contact"
-                onClick={() => setActiveNav("#contact")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation("#contact");
+                }}
                 className={
                   activeNav === "#contact"
                     ? "nav__link active-link"
